@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pc\\Desktop\\Uni\\Complejidad\\Trabajo Final\\tpfinal\\tpfinal\\tpfinal.csproj": {}
+    "C:\\Users\\Pc\\Documents\\GitHub\\TrabajoFinalComplejidadTemporal\\tpfinal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pc\\Desktop\\Uni\\Complejidad\\Trabajo Final\\tpfinal\\tpfinal\\tpfinal.csproj": {
+    "C:\\Users\\Pc\\Documents\\GitHub\\TrabajoFinalComplejidadTemporal\\tpfinal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pc\\Desktop\\Uni\\Complejidad\\Trabajo Final\\tpfinal\\tpfinal\\tpfinal.csproj",
+        "projectUniqueName": "C:\\Users\\Pc\\Documents\\GitHub\\TrabajoFinalComplejidadTemporal\\tpfinal.csproj",
         "projectName": "tpfinal",
-        "projectPath": "C:\\Users\\Pc\\Desktop\\Uni\\Complejidad\\Trabajo Final\\tpfinal\\tpfinal\\tpfinal.csproj",
+        "projectPath": "C:\\Users\\Pc\\Documents\\GitHub\\TrabajoFinalComplejidadTemporal\\tpfinal.csproj",
         "packagesPath": "C:\\Users\\Pc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pc\\Desktop\\Uni\\Complejidad\\Trabajo Final\\tpfinal\\tpfinal\\obj\\",
+        "outputPath": "C:\\Users\\Pc\\Documents\\GitHub\\TrabajoFinalComplejidadTemporal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Pc\\AppData\\Roaming\\NuGet\\NuGet.Config"

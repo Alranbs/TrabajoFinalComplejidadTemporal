@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ae5YB9rr5imouDpHIM7cOy9Zw/arnQ5aciRydWGxXmKL8pIUOaA5M52aFwIGzE/JKHGOBgO0eVDYl0Z0YRHkfg==",
+  "dgSpecHash": "w/3BxphlFxq3+bCfsFUW39ypTUElwGfV99ZxkYcxxW3g8nQuWAfO5BSAUkIuLF2kqXfvtxORvO8wtzY9sMwUew==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Pc\\Desktop\\Uni\\Complejidad\\Trabajo Final\\tpfinal\\tpfinal\\tpfinal.csproj",
+  "projectFilePath": "C:\\Users\\Pc\\Documents\\GitHub\\TrabajoFinalComplejidadTemporal\\tpfinal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Pc\\.nuget\\packages\\textfieldparserstandard\\1.0.0\\textfieldparserstandard.1.0.0.nupkg.sha512",
     "C:\\Users\\Pc\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
