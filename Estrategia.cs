@@ -50,13 +50,57 @@ namespace tpfinal
 
 		public void AgregarDato(ArbolGeneral<DatoDistancia> arbol, DatoDistancia dato)
 		{
-			//Implementar
+			int flag = 0;
+			DatoDistancia raiz = arbol.getDatoRaiz();
+			string datoRaiz = raiz.texto;
+			string datoDato = dato.texto;
+			int distancia = CalcularDistancia(datoRaiz, datoDato);
+			if(arbol.esHoja())
+			{
+				DatoDistancia datoAgregado = new DatoDistancia(distancia, datoDato, dato.descripcion);
+				ArbolGeneral<DatoDistancia> arbolAgregado = new ArbolGeneral<DatoDistancia>(datoAgregado);
+				arbol.agregarHijo(arbolAgregado);
+			}
+			else
+			{
+				foreach(ArbolGeneral<DatoDistancia> hijo in arbol.getHijos())
+					{
+						DatoDistancia datoHijo = hijo.getDatoRaiz();
+						int distanciaHijo = datoHijo.distancia;
+						if (distanciaHijo == distancia)
+						{
+							flag = 1;
+							this.AgregarDato(hijo,new DatoDistancia(0, datoDato, dato.descripcion));
+							break;
+						}
+					}
+			}
+			if (flag == 0)
+			{
+				DatoDistancia nuevodatoHijo = new DatoDistancia(distancia, datoDato, dato.descripcion);
+				ArbolGeneral<DatoDistancia> nuevoHijo = new ArbolGeneral<DatoDistancia>(nuevodatoHijo);
+				arbol.agregarHijo(nuevoHijo);
+			}
+
+			
+
 		}
 
 		public void Buscar(ArbolGeneral<DatoDistancia> arbol, string elementoABuscar, int umbral, List<DatoDistancia> collected)
 		{
-            //Implementar
-
+            string datoRaiz = arbol.getDatoRaiz().texto;
+			int distancia = CalcularDistancia(datoRaiz, elementoABuscar);
+			if (distancia <= umbral)
+			{
+				collected.Add(arbol.getDatoRaiz());
+			}
+			if (!arbol.esHoja())
+			{
+				foreach(ArbolGeneral<DatoDistancia> hijo in arbol.getHijos())
+				{
+					Buscar(hijo,elementoABuscar,umbral,collected);
+				}
+			}	
         }
     }
 }

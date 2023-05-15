@@ -26,16 +26,16 @@ namespace tpfinal
         protected override void OnShown(EventArgs e)
         {
             base.OnShown(e);
-            Estrategia estrategia = new Estrategia();
+            Estrategia estrategia = new Estrategia();             
             progressBar1.Maximum = Utils.lineCount;
             progressBar1.Step = 1;
             using (TextFieldParser parser = new TextFieldParser(@Utils.get_patron()))
             {
 
                 parser.TextFieldType = FieldType.Delimited;
-                parser.SetDelimiters(",");
+                parser.SetDelimiters(",");                 
                 string[] columns = parser.ReadFields();
-                string[] fields = parser.ReadFields();
+                string[] fields = parser.ReadFields();             
                 string titulo = Utils.RemoveSpecialCharacters(fields[1]);
                 string descript = Utils.RemoveSpecialCharacters(fields[2]);
                 Backend.arbol = new ArbolGeneral<DatoDistancia>(new DatoDistancia(0, titulo, descript));
