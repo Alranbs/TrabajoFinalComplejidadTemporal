@@ -45,10 +45,34 @@ namespace tpfinal
 
 		public String Consulta2(ArbolGeneral<DatoDistancia> arbol)
 		{
-			string result = "Implementar";
+			List<string> lista = new List<string>();
+			string result = Consulta2_Auxiliar(arbol,lista);
 
             return result;
         }
+
+		public string Consulta2_Auxiliar(ArbolGeneral<DatoDistancia> arbol, List<string> lista)
+		{
+			string result = "";
+			lista.Add(arbol.getDatoRaiz().ToString());
+			if (arbol.esHoja())
+			{
+				foreach(var elemento in lista)
+				{
+					result+= elemento + "-->";
+				}
+				result += "\n";
+			}
+			else
+			{
+				foreach(var hijo in arbol.getHijos())
+				{
+					result += Consulta2_Auxiliar(hijo, lista);
+					lista.RemoveAt(lista.Count - 1);
+				}
+			}
+			return result;
+		}
 
 		
 
