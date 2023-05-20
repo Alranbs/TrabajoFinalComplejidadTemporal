@@ -27,8 +27,19 @@ namespace tpfinal
 
 		public String Consulta1(ArbolGeneral<DatoDistancia> arbol)
 		{
-			string resutl = "Implementar";
-			return resutl;
+			string result = "";
+			if(arbol.esHoja())
+			{
+				return arbol.getDatoRaiz().texto + "\n";
+			}
+			else
+			{
+				foreach(ArbolGeneral<DatoDistancia> hijo in arbol.getHijos())
+				{
+					result += Consulta1(hijo);
+				}
+			}
+			return result;
 		}
 
 
@@ -43,7 +54,32 @@ namespace tpfinal
 
 		public String Consulta3(ArbolGeneral<DatoDistancia> arbol)
 		{
-			string result = "Implementar";
+			int flag = 0;
+			string result = "0: ";
+			int nivel = 0;
+			Cola<ArbolGeneral<DatoDistancia>> cola = new Cola<ArbolGeneral<DatoDistancia>>();
+			cola.encolar(arbol);
+			cola.encolar(null);
+			while(!cola.esVacia())
+			{
+				ArbolGeneral<DatoDistancia> temp = cola.desencolar();
+				if (temp != null)
+				{
+					result += temp.getDatoRaiz().texto + " ";
+					foreach(ArbolGeneral<DatoDistancia> hijo in temp.getHijos())
+					{						
+						flag = 0;
+						cola.encolar(hijo);
+					}					
+				}
+				if (temp == null && flag == 0)
+				{
+					nivel += 1;
+					result += "\n" + nivel + ":\n ";
+					flag = 1;
+					cola.encolar(null);
+				}
+			}
 		
 			return result;
 		}
@@ -70,17 +106,18 @@ namespace tpfinal
 						if (distanciaHijo == distancia)
 						{
 							flag = 1;
-							this.AgregarDato(hijo,new DatoDistancia(0, datoDato, dato.descripcion));
+							AgregarDato(hijo,new DatoDistancia(0, datoDato, dato.descripcion));
 							break;
 						}
 					}
+				if (flag == 0)
+				{
+					DatoDistancia nuevodatoHijo = new DatoDistancia(distancia, datoDato, dato.descripcion);
+					ArbolGeneral<DatoDistancia> nuevoHijo = new ArbolGeneral<DatoDistancia>(nuevodatoHijo);
+					arbol.agregarHijo(nuevoHijo);
+				}					
 			}
-			if (flag == 0)
-			{
-				DatoDistancia nuevodatoHijo = new DatoDistancia(distancia, datoDato, dato.descripcion);
-				ArbolGeneral<DatoDistancia> nuevoHijo = new ArbolGeneral<DatoDistancia>(nuevodatoHijo);
-				arbol.agregarHijo(nuevoHijo);
-			}
+
 
 			
 
