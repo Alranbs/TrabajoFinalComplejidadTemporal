@@ -159,7 +159,11 @@ namespace tpfinal
 			{
 				foreach(ArbolGeneral<DatoDistancia> hijo in arbol.getHijos())
 				{
-					Buscar(hijo,elementoABuscar,umbral,collected);
+						if (hijo.getDatoRaiz().distancia <= umbral)
+						{
+							Buscar(hijo,elementoABuscar,umbral,collected);
+						}
+
 				}
 			}	
         }
